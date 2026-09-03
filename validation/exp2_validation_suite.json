@@ -1,0 +1,73 @@
+{
+    "name": "loan_exp2_validation_suite_20260903_175358",
+    "id": "bb472342-c0fa-4f28-8eef-dd0a316c8c71",
+    "expectations": [
+        {
+            "type": "expect_column_values_to_be_in_set",
+            "kwargs": {
+                "column": "approval_label",
+                "value_set": [
+                    0,
+                    1
+                ]
+            },
+            "meta": {},
+            "id": "3f0eec83-e101-4c84-9b4a-5610562d9363",
+            "severity": "critical"
+        },
+        {
+            "type": "expect_column_values_to_not_be_null",
+            "kwargs": {
+                "column": "approval_label"
+            },
+            "meta": {},
+            "id": "5fc98c1e-7d2f-4666-a22a-fca5232497d6",
+            "severity": "critical"
+        },
+        {
+            "type": "expect_column_values_to_not_be_null",
+            "kwargs": {
+                "column": "loan_amount"
+            },
+            "meta": {},
+            "id": "bb71decb-3b50-4ddb-88f8-7766a19c0ea0",
+            "severity": "critical"
+        },
+        {
+            "type": "expect_column_values_to_be_between",
+            "kwargs": {
+                "column": "loan_amount",
+                "min_value": 1.0,
+                "max_value": 100000.0
+            },
+            "meta": {},
+            "id": "cffbd071-64c3-45c9-b4e2-33093ce90432",
+            "severity": "critical"
+        },
+        {
+            "type": "expect_column_values_to_be_between",
+            "kwargs": {
+                "column": "application_year",
+                "min_value": 2007.0,
+                "max_value": 2018.0
+            },
+            "meta": {},
+            "id": "e08006a2-beb1-40e6-9f76-6c34605918db",
+            "severity": "critical"
+        },
+        {
+            "type": "expect_column_values_to_match_regex",
+            "kwargs": {
+                "column": "state",
+                "regex": "^[A-Z]{2}$|^Unknown$"
+            },
+            "meta": {},
+            "id": "e2df5013-2b1d-4d17-a779-d5959c564d59",
+            "severity": "critical"
+        }
+    ],
+    "meta": {
+        "great_expectations_version": "1.22.0"
+    },
+    "notes": null
+}

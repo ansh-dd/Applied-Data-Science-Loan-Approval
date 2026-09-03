@@ -1,0 +1,7 @@
+Validation,Success
+Approval label contains only 0 and 1,True
+Approval label is not null,True
+Loan amount is not null,True
+Loan amount between 1 and 100000,True
+Application year between 2007 and 2018,True
+State is valid or Unknown,True

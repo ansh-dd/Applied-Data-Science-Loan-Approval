@@ -1,0 +1,21 @@
+,Data Type,Missing Count,Missing Percentage,Unique Values
+loan_amount,Float64,0,0.0,1732
+application_date,datetime64[ns],0,0.0,4189
+purpose,object,0,0.0,14
+risk_score,Float64,106003,21.22,489
+dti,Float64,17165,3.44,11318
+state,string,0,0.0,52
+approval_label,int64,0,0.0,2
+employment_years,float64,20789,4.16,11
+risk_score_missing,int64,0,0.0,2
+dti_missing,int64,0,0.0,2
+employment_missing,int64,0,0.0,2
+application_year,int64,0,0.0,12
+application_month,int64,0,0.0,12
+application_quarter,int64,0,0.0,4
+application_period,object,0,0.0,47
+loan_amount_log,Float64,0,0.0,1732
+loan_amount_band,category,0,0.0,5
+risk_score_band,string,0,0.0,6
+dti_band,string,0,0.0,5
+employment_band,string,0,0.0,5
