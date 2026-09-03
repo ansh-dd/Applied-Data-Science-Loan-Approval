@@ -1,9 +1,9 @@
 ,Data Type,Missing Count,Missing Percentage,Unique Values
-risk_score,float64,97394,19.48,564
-employment_length_raw,object,20791,4.16,11
-application_date,object,0,0.0,4322
-loan_amount,float64,0,0.0,1753
-purpose,object,13,0.0,25431
-dti,object,17,0.0,19279
-state,object,13,0.0,51
+risk_score,float64,167380,33.48,549
+employment_length_raw,object,24792,4.96,11
+dti,object,203,0.04,21071
+loan_amount,float64,2,0.0,1649
+purpose,object,15,0.0,1108
+application_date,object,2,0.0,3832
+state,object,2,0.0,51
 approval_label,int64,0,0.0,2

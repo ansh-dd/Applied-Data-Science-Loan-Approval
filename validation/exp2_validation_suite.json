@@ -1,6 +1,6 @@
 {
-    "name": "loan_exp2_validation_suite_20260903_175358",
-    "id": "bb472342-c0fa-4f28-8eef-dd0a316c8c71",
+    "name": "loan_exp2_validation_suite_20260903_182814",
+    "id": "9ec9ffb1-bab2-4293-8a5c-f5f70e364ef6",
     "expectations": [
         {
             "type": "expect_column_values_to_be_in_set",
@@ -12,7 +12,7 @@
                 ]
             },
             "meta": {},
-            "id": "3f0eec83-e101-4c84-9b4a-5610562d9363",
+            "id": "d2a56d9d-1e5d-422a-aa7b-3e5cccf9bc7e",
             "severity": "critical"
         },
         {
@@ -21,7 +21,7 @@
                 "column": "approval_label"
             },
             "meta": {},
-            "id": "5fc98c1e-7d2f-4666-a22a-fca5232497d6",
+            "id": "109340dd-0722-43d4-9db9-5e18f2e23abe",
             "severity": "critical"
         },
         {
@@ -30,7 +30,7 @@
                 "column": "loan_amount"
             },
             "meta": {},
-            "id": "bb71decb-3b50-4ddb-88f8-7766a19c0ea0",
+            "id": "0576c962-dc5d-4e94-8aeb-50214b1fc0ee",
             "severity": "critical"
         },
         {
@@ -41,7 +41,7 @@
                 "max_value": 100000.0
             },
             "meta": {},
-            "id": "cffbd071-64c3-45c9-b4e2-33093ce90432",
+            "id": "9bc11ca7-fb5a-479e-9844-54a2139a6377",
             "severity": "critical"
         },
         {
@@ -52,7 +52,7 @@
                 "max_value": 2018.0
             },
             "meta": {},
-            "id": "e08006a2-beb1-40e6-9f76-6c34605918db",
+            "id": "ce97e327-3e13-485d-bec2-aa65e84e657a",
             "severity": "critical"
         },
         {
@@ -62,7 +62,7 @@
                 "regex": "^[A-Z]{2}$|^Unknown$"
             },
             "meta": {},
-            "id": "e2df5013-2b1d-4d17-a779-d5959c564d59",
+            "id": "37dd0154-c47b-4856-afd1-346ba5a8e952",
             "severity": "critical"
         }
     ],
