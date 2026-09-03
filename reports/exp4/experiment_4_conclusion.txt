@@ -1,0 +1,38 @@
+
+EXPERIMENT 4 - MACHINE LEARNING MODELING AND EXPERIMENT TRACKING
+================================================================
+
+Dataset:
+The cleaned dataset generated during Experiment 2 was used.
+
+Train/Test Split:
+80% training and 20% testing with stratified sampling.
+
+Baseline Models:
+1. Logistic Regression
+2. Decision Tree
+3. Random Forest
+4. Hist Gradient Boosting
+
+Hyperparameter Tuning:
+RandomizedSearchCV was applied to Random Forest.
+ROC-AUC was used as the optimization metric.
+
+Final Best Model:
+Hist Gradient Boosting
+
+Final Test Metrics:
+Accuracy          = 0.9638
+Precision         = 0.9596
+Recall            = 0.9685
+F1-Score          = 0.9640
+ROC-AUC           = 0.9934
+Balanced Accuracy = 0.9638
+
+The best model was saved using Joblib.
+
+MLflow was used to track model parameters, evaluation metrics,
+hyperparameter tuning results and the final trained model.
+
+The selected model will be used in Experiment 5 for SHAP,
+LIME and fairness analysis.
