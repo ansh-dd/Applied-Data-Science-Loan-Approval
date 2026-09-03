@@ -1,0 +1,3 @@
+Metric,Before_Mitigation,After_Mitigation
+Geographic Selection Rate Difference,0.2333282288898329,0.21456528253918072
+Geographic Equalized Odds Difference,0.038590160364592174,0.05207571821872414

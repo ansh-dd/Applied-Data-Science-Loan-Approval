@@ -1,0 +1,16 @@
+Feature Condition,LIME Weight
+categorical__state_DC <= 0.00,-0.24686717490940172
+categorical__purpose_educational <= 0.00,-0.213182335755055
+categorical__state_ME <= 0.00,-0.1957647010843865
+-0.19 < numeric__risk_score <= 0.05,0.1744375614920679
+categorical__purpose_wedding <= 0.00,-0.13905823596568517
+categorical__purpose_car <= 0.00,-0.09202134124101721
+categorical__state_MA <= 0.00,-0.07944335150793116
+categorical__state_MI <= 0.00,-0.07679655880658447
+categorical__state_IN <= 0.00,-0.07644479460016475
+categorical__state_ND <= 0.00,0.07499629935498787
+categorical__state_ID <= 0.00,-0.07423334743772472
+categorical__state_OK <= 0.00,-0.06937066487303828
+categorical__state_DE <= 0.00,0.06869167952649884
+categorical__state_SD <= 0.00,-0.06341708858089759
+categorical__state_MN <= 0.00,0.05522404612306511

@@ -1,0 +1,83 @@
+
+EXPERIMENT 5 - EXPLAINABLE AI AND FAIRNESS ANALYSIS
+======================================================================
+
+1. EXPLAINABILITY
+-----------------
+SHAP was used for global and local model explainability.
+
+The most influential transformed features identified by SHAP included:
+numeric__employment_years, numeric__risk_score, numeric__dti, numeric__loan_amount, numeric__application_year, categorical__purpose_debt_consolidation, categorical__purpose_credit_card, categorical__purpose_other, numeric__application_month, categorical__purpose_car
+
+A SHAP bar plot and beeswarm plot were generated to explain overall
+model behavior.
+
+A local SHAP waterfall plot was also generated to explain an individual
+loan application.
+
+LIME was used as an additional local explanation technique.
+Separate explanations were generated for the Accepted and Rejected classes.
+
+2. FAIRNESS / GROUP AUDIT
+-------------------------
+The LendingClub accepted/rejected dataset does not contain verified
+protected demographic attributes such as race or gender.
+
+Therefore, demographic fairness cannot be directly evaluated using this
+dataset.
+
+Applicant state was used only as a geographic grouping variable to
+demonstrate Fairlearn-based group analysis.
+
+Before mitigation:
+
+Geographic Selection Rate Difference =
+0.2333
+
+Geographic Equalized Odds Difference =
+0.0386
+
+3. BIAS MITIGATION
+------------------
+Fairlearn ThresholdOptimizer was applied using an Equalized Odds
+constraint.
+
+After mitigation:
+
+Geographic Selection Rate Difference =
+0.2146
+
+Geographic Equalized Odds Difference =
+0.0521
+
+Equalized Odds Difference Change =
+-0.0135
+
+Model performance before mitigation:
+
+Accuracy = 0.9638
+Precision = 0.9595
+Recall = 0.9686
+F1 Score = 0.9640
+Balanced Accuracy = 0.9638
+
+Model performance after mitigation:
+
+Accuracy = 0.9593
+Precision = 0.9535
+Recall = 0.9659
+F1 Score = 0.9596
+Balanced Accuracy = 0.9593
+
+4. FINAL INTERPRETATION
+-----------------------
+Experiment 5 demonstrates how model predictions can be explained using
+SHAP and LIME and how Fairlearn can be used to identify and mitigate
+differences in model behavior across groups.
+
+The fairness results must be interpreted strictly as geographic
+state-group analysis.
+
+State is not treated as a substitute for race, gender, ethnicity or any
+other protected attribute, and these results do not establish legal or
+demographic fairness.

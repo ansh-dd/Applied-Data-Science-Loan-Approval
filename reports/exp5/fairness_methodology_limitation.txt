@@ -1,0 +1,21 @@
+
+FAIRNESS AUDIT METHODOLOGICAL LIMITATION
+========================================
+
+The LendingClub accepted/rejected dataset used in this project does not
+contain verified protected demographic attributes such as race or gender.
+
+Therefore, this experiment does NOT perform a demographic fairness audit.
+
+Applicant state is used only as a geographic grouping variable to demonstrate
+Fairlearn-based group performance analysis and to identify differences in
+model behavior across geographic groups.
+
+State must not be interpreted as a substitute for race, gender, ethnicity,
+religion, or any other protected characteristic.
+
+Groups with very small test-set sample sizes are excluded from comparative
+metrics because their estimates may be unstable.
+
+Consequently, the results in this experiment demonstrate geographic group
+disparity analysis rather than proof of legal, ethical, or demographic fairness.
