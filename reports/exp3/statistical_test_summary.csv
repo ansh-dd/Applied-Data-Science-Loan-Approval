@@ -1,0 +1,4 @@
+Test,Variables,Statistic,P_Value,Decision
+Independent Samples T-Test,Loan Amount vs Approval Status,80.13041210618204,0.0,Reject H0
+Chi-Square Test,Purpose vs Approval Status,40652.361571884474,0.0,Reject H0
+One-Way ANOVA,Loan Amount across Purpose Groups,3303.8206697607584,0.0,Reject H0

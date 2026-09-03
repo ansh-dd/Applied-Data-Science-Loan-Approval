@@ -1,0 +1,16 @@
+EXPERIMENT 3 - EDA AND STATISTICAL ANALYSIS CONCLUSION
+======================================================================
+
+Dataset analyzed: 499,337 rows and 20 columns.
+
+1. T-Test: Loan amount differs significantly between accepted and rejected applications.
+
+2. Chi-Square Test: Loan purpose is significantly associated with loan approval status.
+
+3. ANOVA: Mean loan amount differs significantly across at least one loan-purpose group.
+
+4. Distribution fitting: Lognormal provided the comparatively better fit among the tested distributions.
+
+5. Histograms, boxplots, correlation analysis, class distribution and purpose-wise approval analysis were completed.
+
+The findings from Experiment 3 will be used to guide feature selection and machine-learning modeling in Experiment 4.
