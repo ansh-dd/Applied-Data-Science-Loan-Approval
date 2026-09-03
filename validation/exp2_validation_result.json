@@ -6,7 +6,7 @@
             "expectation_config": {
                 "type": "expect_column_values_to_be_in_set",
                 "kwargs": {
-                    "batch_id": "loan_source_20260903_182814-loan_cleaned_asset_20260903_182814",
+                    "batch_id": "loan_source_20260903_190247-loan_cleaned_asset_20260903_190247",
                     "column": "approval_label",
                     "value_set": [
                         0,
@@ -14,7 +14,7 @@
                     ]
                 },
                 "meta": {},
-                "id": "d2a56d9d-1e5d-422a-aa7b-3e5cccf9bc7e",
+                "id": "fdd0e6d6-c59c-4378-b83d-49390f4f4fe9",
                 "severity": "critical"
             },
             "result": {
@@ -41,11 +41,11 @@
             "expectation_config": {
                 "type": "expect_column_values_to_not_be_null",
                 "kwargs": {
-                    "batch_id": "loan_source_20260903_182814-loan_cleaned_asset_20260903_182814",
+                    "batch_id": "loan_source_20260903_190247-loan_cleaned_asset_20260903_190247",
                     "column": "approval_label"
                 },
                 "meta": {},
-                "id": "109340dd-0722-43d4-9db9-5e18f2e23abe",
+                "id": "859c9ddb-dd4b-4d80-89fc-9836bcba251a",
                 "severity": "critical"
             },
             "result": {
@@ -68,11 +68,11 @@
             "expectation_config": {
                 "type": "expect_column_values_to_not_be_null",
                 "kwargs": {
-                    "batch_id": "loan_source_20260903_182814-loan_cleaned_asset_20260903_182814",
+                    "batch_id": "loan_source_20260903_190247-loan_cleaned_asset_20260903_190247",
                     "column": "loan_amount"
                 },
                 "meta": {},
-                "id": "0576c962-dc5d-4e94-8aeb-50214b1fc0ee",
+                "id": "a768ecb3-c9aa-43cb-886e-b125d4248ed1",
                 "severity": "critical"
             },
             "result": {
@@ -95,13 +95,13 @@
             "expectation_config": {
                 "type": "expect_column_values_to_be_between",
                 "kwargs": {
-                    "batch_id": "loan_source_20260903_182814-loan_cleaned_asset_20260903_182814",
+                    "batch_id": "loan_source_20260903_190247-loan_cleaned_asset_20260903_190247",
                     "column": "loan_amount",
                     "min_value": 1.0,
                     "max_value": 100000.0
                 },
                 "meta": {},
-                "id": "9bc11ca7-fb5a-479e-9844-54a2139a6377",
+                "id": "f7f213d5-dc7b-4a21-a3ba-869b6e77a73a",
                 "severity": "critical"
             },
             "result": {
@@ -128,13 +128,13 @@
             "expectation_config": {
                 "type": "expect_column_values_to_be_between",
                 "kwargs": {
-                    "batch_id": "loan_source_20260903_182814-loan_cleaned_asset_20260903_182814",
+                    "batch_id": "loan_source_20260903_190247-loan_cleaned_asset_20260903_190247",
                     "column": "application_year",
                     "min_value": 2007.0,
                     "max_value": 2018.0
                 },
                 "meta": {},
-                "id": "ce97e327-3e13-485d-bec2-aa65e84e657a",
+                "id": "02f14bb3-11ad-420d-9165-4de1673d7b9a",
                 "severity": "critical"
             },
             "result": {
@@ -161,12 +161,12 @@
             "expectation_config": {
                 "type": "expect_column_values_to_match_regex",
                 "kwargs": {
-                    "batch_id": "loan_source_20260903_182814-loan_cleaned_asset_20260903_182814",
+                    "batch_id": "loan_source_20260903_190247-loan_cleaned_asset_20260903_190247",
                     "column": "state",
                     "regex": "^[A-Z]{2}$|^Unknown$"
                 },
                 "meta": {},
-                "id": "37dd0154-c47b-4856-afd1-346ba5a8e952",
+                "id": "f814f5b6-fa6b-47f2-b541-dc2cdd1cf8b3",
                 "severity": "critical"
             },
             "result": {
@@ -189,7 +189,7 @@
             }
         }
     ],
-    "suite_name": "loan_exp2_validation_suite_20260903_182814",
+    "suite_name": "loan_exp2_validation_suite_20260903_190247",
     "suite_parameters": {},
     "statistics": {
         "evaluated_expectations": 6,
@@ -203,24 +203,24 @@
             "batch_data": "PandasDataFrame"
         },
         "batch_markers": {
-            "ge_load_time": "20260903T182814.482636Z",
+            "ge_load_time": "20260903T190247.124799Z",
             "pandas_data_fingerprint": "7415e95af43924fa1e54ba3d6be30bf1"
         },
         "active_batch_definition": {
-            "datasource_name": "loan_source_20260903_182814",
+            "datasource_name": "loan_source_20260903_190247",
             "data_connector_name": "fluent",
-            "data_asset_name": "loan_cleaned_asset_20260903_182814",
+            "data_asset_name": "loan_cleaned_asset_20260903_190247",
             "batch_identifiers": {
                 "dataframe": "<DATAFRAME>"
             }
         },
-        "validation_id": "e17b948c-3918-44bd-9f79-f788e689dd23",
+        "validation_id": "88130649-c221-4e43-b9a2-2e27e4087ac7",
         "checkpoint_id": null,
         "run_id": {
             "run_name": null,
-            "run_time": "2026-09-03T18:28:17.927346+00:00"
+            "run_time": "2026-09-03T19:02:51.066279+00:00"
         },
-        "validation_time": "2026-09-03T18:28:17.927346+00:00",
+        "validation_time": "2026-09-03T19:02:51.066279+00:00",
         "batch_parameters": {
             "dataframe": "<DATAFRAME>"
         }
