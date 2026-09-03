@@ -1,0 +1,4 @@
+[core]
+    remote = ads_storage
+['remote "ads_storage"']
+    url = /content/drive/MyDrive/ADS_Loan_Project_DVC_Storage
