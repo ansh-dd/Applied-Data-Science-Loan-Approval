@@ -1,0 +1,19 @@
+EXPERIMENT 6 - DOCKER CONTAINER TEST EVIDENCE
+================================================
+
+Environment: Google Cloud Shell
+
+Docker Version:
+Docker version 29.7.2, build a7dcaa6
+
+Running Container:
+CONTAINER ID   IMAGE               COMMAND                  CREATED              STATUS              PORTS                    NAMES
+c9b5a92294eb   loan-approval-api   "uvicorn app:app --h…"   About a minute ago   Up About a minute   0.0.0.0:8000->8000/tcp   loan-api
+
+Health Endpoint:
+{"status":"healthy","model_loaded":true}
+
+Prediction Endpoint:
+{"prediction":1,"decision":"Accepted","approval_probability":0.9968}
+
+RESULT: DOCKER CONTAINER TEST PASSED
