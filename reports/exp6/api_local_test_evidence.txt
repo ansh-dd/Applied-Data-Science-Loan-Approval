@@ -1,0 +1,41 @@
+
+EXPERIMENT 6 - FASTAPI LOCAL TEST EVIDENCE
+======================================================================
+
+Endpoint:
+POST /predict
+
+HTTP Status:
+200
+
+Request JSON:
+{
+    "loan_amount": 15000,
+    "risk_score": 720,
+    "dti": 18.5,
+    "employment_years": 5,
+    "application_year": 2018,
+    "application_month": 6,
+    "application_quarter": 2,
+    "purpose": "debt_consolidation",
+    "state": "CA"
+}
+
+Response JSON:
+{
+    "prediction": 1,
+    "decision": "Accepted",
+    "approval_probability": 0.9968
+}
+
+Result:
+PASS - /predict endpoint is working successfully
+
+Test Method:
+FastAPI TestClient
+
+Model:
+Experiment 4 HistGradientBoosting loan approval pipeline
+
+Test Timestamp:
+2026-09-22 16:36:26

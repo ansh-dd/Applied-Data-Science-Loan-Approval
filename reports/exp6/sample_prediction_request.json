@@ -1,0 +1,11 @@
+{
+    "loan_amount": 15000,
+    "risk_score": 720,
+    "dti": 18.5,
+    "employment_years": 5,
+    "application_year": 2018,
+    "application_month": 6,
+    "application_quarter": 2,
+    "purpose": "debt_consolidation",
+    "state": "CA"
+}

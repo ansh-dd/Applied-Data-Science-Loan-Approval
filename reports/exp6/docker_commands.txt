@@ -1,0 +1,33 @@
+EXPERIMENT 6 - DOCKER COMMANDS
+
+Run these commands from the exp6_api folder.
+
+1. Build Docker image
+
+docker build -t loan-approval-api .
+
+2. Run Docker container
+
+docker run -d -p 8000:8000 --name loan-api loan-approval-api
+
+3. Check running containers
+
+docker ps
+
+4. Test health endpoint
+
+curl http://localhost:8000/health
+
+5. Test prediction endpoint
+
+curl -X POST http://localhost:8000/predict ^
+  -H "Content-Type: application/json" ^
+  -d "{\"loan_amount\":15000,\"risk_score\":720,\"dti\":18.5,\"employment_years\":5,\"application_year\":2018,\"application_month\":6,\"application_quarter\":2,\"purpose\":\"debt_consolidation\",\"state\":\"CA\"}"
+
+6. Stop container
+
+docker stop loan-api
+
+7. Remove container
+
+docker rm loan-api
