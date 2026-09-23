@@ -4,6 +4,13 @@ from pathlib import Path
 import joblib
 import pandas as pd
 
+from pathlib import Path
+
+import joblib
+import pandas as pd
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel, Field
+
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
@@ -137,9 +144,7 @@ def predict(application: LoanApplication):
                 4
             )
         }
-
-    except Exception as error:
-
+    except Exception as error:  # noqa: BLE001
         raise HTTPException(
             status_code=500,
             detail=str(error)
