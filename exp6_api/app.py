@@ -3,17 +3,8 @@ from pathlib import Path
 
 import joblib
 import pandas as pd
-
-from pathlib import Path
-
-import joblib
-import pandas as pd
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
-
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel, Field
-
 
 # ---------------------------------------------------------
 # Load trained model
