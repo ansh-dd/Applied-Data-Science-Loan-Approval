@@ -1,0 +1,181 @@
+name: Experiment 7 - CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+
+  version-check:
+    name: Version Check
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: exp6_api
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set Up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Display Python Version
+        run: python --version
+
+      - name: Display Pip Version
+        run: pip --version
+
+      - name: Install Application Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Display Important Package Versions
+        run: |
+          python -c "import sklearn; print('scikit-learn:', sklearn.__version__)"
+          python -c "import pandas; print('pandas:', pandas.__version__)"
+          python -c "import numpy; print('numpy:', numpy.__version__)"
+          python -c "import fastapi; print('FastAPI:', fastapi.__version__)"
+          python -c "import joblib; print('joblib:', joblib.__version__)"
+
+  lint:
+    name: Code Quality - Ruff
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: exp6_api
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set Up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install Ruff
+        run: pip install ruff
+
+      - name: Run Ruff Linter
+        run: |
+          ruff check app.py test_app.py
+
+  test:
+    name: FastAPI Tests
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: exp6_api
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set Up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest httpx
+
+      - name: Run Pytest
+        run: |
+          pytest test_app.py -v
+
+  build:
+    name: Docker Build and API Smoke Test
+
+    needs:
+      - version-check
+      - lint
+      - test
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker Image
+        run: |
+          docker build \
+            -t loan-approval-api:ci \
+            ./exp6_api
+
+      - name: Run Docker Container
+        run: |
+          docker run -d \
+            -p 8000:8000 \
+            --name loan-api \
+            loan-approval-api:ci
+
+      - name: Wait for API
+        run: |
+          for i in {1..20}
+          do
+            if curl -fsS http://localhost:8000/health
+            then
+              echo "API is ready"
+              exit 0
+            fi
+
+            echo "Waiting for API..."
+            sleep 2
+          done
+
+          echo "API failed to start"
+          docker logs loan-api
+          exit 1
+
+      - name: Test Health Endpoint
+        run: |
+          curl -fsS http://localhost:8000/health
+
+      - name: Test Prediction Endpoint
+        run: |
+          curl -fsS \
+            -X POST \
+            "http://localhost:8000/predict" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "loan_amount": 15000,
+              "risk_score": 720,
+              "dti": 18.5,
+              "employment_years": 5,
+              "application_year": 2018,
+              "application_month": 6,
+              "application_quarter": 2,
+              "purpose": "debt_consolidation",
+              "state": "CA"
+            }'
+
+      - name: Display Container Logs
+        if: always()
+        run: |
+          docker logs loan-api || true
+
+      - name: Stop Container
+        if: always()
+        run: |
+          docker rm -f loan-api || true
